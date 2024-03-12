@@ -15,7 +15,7 @@ const ProductList = () => {
 
     return (
         <div>
-            <h1>Product List</h1>
+            <h1>Product List fetched using Client Component</h1>
             {
                 products.map((item) => 
                     <h3 key={item.id}>Name: {item.title}, Price: {item.price}</h3>
