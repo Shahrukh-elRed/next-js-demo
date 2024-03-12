@@ -1,3 +1,5 @@
+import ProductPrice from "./productprice";
+
 const serverProductList = async () => {
     let data = await fetch("https://dummyjson.com/products");
     data = await data.json();
@@ -12,7 +14,10 @@ const ServerProduct = async () => {
             <h1>Product List fetched using Server Component</h1>
             {
                 products.map((item) => 
-                    <h3 key={item.id}>Name : {item.title}</h3>
+                    <div key={item.id}>
+                        <h3>Name : {item.title}</h3>
+                        <ProductPrice price={item.price}/>
+                    </div>
                 )
             }
         </div>
