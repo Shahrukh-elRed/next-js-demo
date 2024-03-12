@@ -1,5 +1,7 @@
 "use client"
 import Link from "next/link";
+import style1 from "@/other.module.css";
+import style2 from "@/custom.module.css";
 
 export default function Home() {
 
@@ -15,6 +17,8 @@ export default function Home() {
       <br />
       <h1>Global and inline styles component</h1>
       <Link href="/user">Go to Global and inline styles component</Link>
+      <div className={style1.main}>Custom CSS dark blue color</div>
+      <div className={style2.main}>Custom CSS dark gray color</div>
     </main>
   )
 }
