@@ -1,9 +1,10 @@
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <h1>Home</h1>
+    <main>
+      <h1>Loader feature in Next</h1>
+      <Link href="/users">go to Users Page</Link>
     </main>
   );
 }
