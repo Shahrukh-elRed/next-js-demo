@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>generateMetadata in Next</h1>
-      <Link href="/user">User Page</Link>
+      <Link href="/userdetails">User geoLocation Page</Link>
     </main>
   );
 }
