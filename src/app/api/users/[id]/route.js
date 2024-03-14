@@ -17,3 +17,12 @@ export const PUT = async (request, content) => {
     }
     return NextResponse.json({ result: payload, success: true }, { status: 200 })
 }
+
+export const DELETE = (request, content) => {
+    let id = content.params.id
+    if (id) {
+        return NextResponse.json({ result: "User deleted successfully", success: true }, { status: 200 })
+    } else {
+        return NextResponse.json({ result: "Error! something went wrong", success: false }, { status: 400 })
+    }
+}
