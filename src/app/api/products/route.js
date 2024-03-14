@@ -5,14 +5,16 @@ import { Product } from "@/lib/model/product"
 
 export const GET = async () => {
     let data = []
+    let success = true
     try {
         await mongoose.connect(connectionString)
         data = await Product.find()
     } catch (error) {
-        data = { success: false }
+        data = { result: "error" }
+        success = false
     }
 
-    return NextResponse.json({ result: data })
+    return NextResponse.json({ result: data, success })
 }
 
 export const POST = async (request) => {

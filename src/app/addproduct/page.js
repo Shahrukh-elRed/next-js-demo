@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { useState } from "react"
 
 const AddProduct = () => {
@@ -38,6 +39,11 @@ const AddProduct = () => {
             value={category} onChange={(e) => setCategory(e.target.value)}
             />
             <button className="btn" onClick={addProduct}>Add Product</button>
+            <br />
+            <br />
+            <br />
+            <br />
+            <Link href="/">Go back to Home</Link>
         </div>
     )
 }
