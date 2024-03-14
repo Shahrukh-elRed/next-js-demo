@@ -7,3 +7,13 @@ export const GET = (request, content) => {
         { result: "No Data Found", success: false} : { result: userData[0], success: true }
         , { status: 200 })
 }
+
+export const PUT = async (request, content) => {
+    let payload = await request.json()
+    payload.id = content.params.id
+    
+    if (!payload.name || !payload.age || !payload.email) {
+        return NextResponse.json({ result: "Request data is not valid", success: false }, { status: 400 })
+    }
+    return NextResponse.json({ result: payload, success: true }, { status: 200 })
+}
