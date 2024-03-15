@@ -31,6 +31,7 @@ const Products = async () => {
                                 <td>{product.color}</td>
                                 <td>{product.company}</td>
                                 <td>{product.category}</td>
+                                <td><Link href={`products/${product._id}`}>Edit</Link></td>
                             </tr>
                         )
                     }
