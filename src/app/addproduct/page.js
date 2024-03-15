@@ -1,8 +1,10 @@
 "use client"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 const AddProduct = () => {
+    const router = useRouter()
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [color, setColor] = useState("")
@@ -17,7 +19,10 @@ const AddProduct = () => {
             }
         )
         result = await result.json()
-        if (result.success) alert("new product added")
+        if (result.success) {
+            alert("new product added")
+            router.push("/products")
+        } else alert("Something went wrong! please try again")
     }
 
     return (

@@ -2,7 +2,7 @@ import DeleteProduct from "@/lib/DeleteProduct"
 import Link from "next/link"
 
 const fetchProducts = async () => {
-    let data = await fetch("http://localhost:3000/api/products", { cache: "no-cache" })
+    let data = await fetch("http://localhost:3000/api/products", { cache: "no-store" })
     data = await data.json()
     return data.success ? data.result : { success: false } 
 }

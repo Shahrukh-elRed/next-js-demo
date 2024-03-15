@@ -1,5 +1,4 @@
 "use client"
-
 import { useRouter } from "next/navigation"
 
 const DeleteProduct = ({ id }) => {
@@ -10,7 +9,7 @@ const DeleteProduct = ({ id }) => {
         result = await result.json()
         if (result.success) {
             alert("Product deleted")
-            router.push("/products")
+            router.refresh()
         } else alert ("Somethign went wrong! please try again")
     }
 
