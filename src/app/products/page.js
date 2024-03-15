@@ -1,7 +1,8 @@
+import DeleteProduct from "@/lib/DeleteProduct"
 import Link from "next/link"
 
 const fetchProducts = async () => {
-    let data = await fetch("http://localhost:3000/api/products")
+    let data = await fetch("http://localhost:3000/api/products", { cache: "no-cache" })
     data = await data.json()
     return data.success ? data.result : { success: false } 
 }
@@ -32,6 +33,7 @@ const Products = async () => {
                                 <td>{product.company}</td>
                                 <td>{product.category}</td>
                                 <td><Link href={`products/${product._id}`}>Edit</Link></td>
+                                <td><DeleteProduct id={product._id} /></td>
                             </tr>
                         )
                     }
